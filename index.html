@@ -21,34 +21,45 @@
       src="https://kit.fontawesome.com/f90dc0613f.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
     <title>Document</title>
   </head>
   <body>
     <div class="container gx-0 border rounded-2 my-5">
       <div class="row mainHeader">
-        <div class="col-8">
+        <div id="headerTitle" class="col-6">
           <h1>Weather forecast</h1>
           <small>Saturday 21st February 2022</small>
         </div>
 
-        <form class="mt-2 col-4">
+        <form class="mt-2 col-5">
           <input
             type="text"
             class="form-control"
             placeholder="Search city here"
             aria-label="Search city here"
+            id="form-Input"
           />
-          <button>
+          <button id="inputButton" type="submit">
             <i class="fa-solid fa-magnifying-glass searchIcon"></i>
           </button>
         </form>
+        <div class="col-1" id="locationButton">
+          <button id="location" type="submit">
+            <i class="fa-solid fa-location-crosshairs"></i>
+          </button>
+        </div>
       </div>
       <div class="row detailWrapper">
-        <h2 class="detailCity col-6">City,Country <br />2</h2>
+        <div class="col-6">
+          <h2 id="city" class="detailCity">City</h2>
+          <h3 id="temp">2</h3>
+        </div>
+
         <i class="fa-regular fa-sun detailIcon col-4"></i>
         <p class="detailInfo col-2">
-          partly cloudy <br />Humidity:76% <br />Wind: 4km/h
+          cloudy <br />Humidity:76% <br />Wind: 4km/h
         </p>
       </div>
       <div class="daysForecast">
@@ -94,4 +105,5 @@
       </div>
     </div>
   </body>
+  <script src="src/index.js"></script>
 </html>
