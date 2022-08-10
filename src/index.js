@@ -12,9 +12,16 @@ function formHandler(e) {
 }
 function showTemp(response) {
   let temprature = Math.round(response.data.main.temp);
-  console.log(temprature);
+  let windSpeed = Math.round(response.data.wind.speed);
+  let weatherShape = document.querySelector("#weatherShape");
+  let humiduty = document.querySelector("#humidity");
+  let wind = document.querySelector("#wind");
   let temp = document.querySelector("#temp");
   temp.innerHTML = temprature;
+  humiduty.innerHTML = `Humidity:${response.data.main.humidity}%`;
+  wind.innerHTML = `Wind:${windSpeed}km/h`;
+  weatherShape.innerHTML = response.data.weather[0].main;
+  console.log(response.data);
 }
 function getTempData() {
   navigator.geolocation.getCurrentPosition(showLocation);
